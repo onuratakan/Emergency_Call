@@ -30,7 +30,8 @@ def emergency_call_main_cli_command(choices_input):
 def emergency_call_main_gui(main_gui,column,row):
 
     main_gui.earthquake_button = ttk.Button(main_gui.frame) # Button defination
-    main_gui.earthquake_button.configure(text='Earthquake Call') # Button text configuration
+    main_gui.earthquake_image = tk.PhotoImage(file='apps/Emergency_Call/icons/earthquake_image_50x50.png') # Button Image
+    main_gui.earthquake_button.configure(compound = 'top', text='Earthquake Call', image=main_gui.earthquake_image) # Button configuration
     main_gui.earthquake_button.grid(column=str(column), padx='25', pady='20', row=str(row), sticky='n') # Button place defination with grid system
     import_arguments_earthquake_button = f"from apps.Emergency_call.emergency_call_main import earthquake_button_command" # An import defination for command of this button
     func_name_earthquake_button = "earthquake_button_command"  # An defination for command of this button
@@ -39,7 +40,8 @@ def emergency_call_main_gui(main_gui,column,row):
     column += 1 # With this the next button will slide to the rigth from earthquake button
 
     main_gui.ambulance_button = ttk.Button(main_gui.frame) # Button defination
-    main_gui.ambulance_button.configure(text='Ambulance Call') # Button text configuration
+    main_gui.ambulance_image = tk.PhotoImage(file='apps/Emergency_Call/icons/ambulance_image_50x50.png') # Button Image
+    main_gui.ambulance_button.configure(compound = 'top', text='Ambulance Call', image=main_gui.ambulance_image) # Button configuration
     main_gui.ambulance_button.grid(column=str(column), padx='25', pady='20', row=str(row), sticky='n') # Button place defination with grid system
     import_arguments_ambulance_button = f"from apps.Emergency_call.emergency_call_main import ambulance_button_command" # An import defination for command of this button
     func_name_ambulance_button = "ambulance_button_command"  # An defination for command of this button
